@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script>
+        function clearDisplay() {
+            document.calc.display.value = '';
+        }
+
+        function appendToDisplay(value) {
+            document.calc.display.value += value;
+        }
+
+        function calculate() {
+            try {
+                document.calc.display.value = eval(document.calc.display.value);
+            } catch (error) {
+                document.calc.display.value = 'Error';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Maths<span></span>Calculator</h1>
+    <form name="calc">
+        <input class="dis" type="text" name="display" readonly><br>
+        <input class="btn" type="button" value="0" onclick="appendToDisplay('0')">
+        <input class="btn" type="button" value="1" onclick="appendToDisplay('1')">
+        <input class="btn" type="button" value="2" onclick="appendToDisplay('2')">
+        <input class="p" type="button" value="+" onclick="appendToDisplay('+')"><br>
+        <input class="btn" type="button" value="3" onclick="appendToDisplay('3')">
+        <input class="btn" type="button" value="4" onclick="appendToDisplay('4')">
+        <input class="btn" type="button" value="5" onclick="appendToDisplay('5')">
+        <input class="p" type="button" value="-" onclick="appendToDisplay('-')"><br>
+        <input class="btn" type="button" value="6" onclick="appendToDisplay('6')">
+        <input class="btn" type="button" value="7" onclick="appendToDisplay('7')">
+        <input class="btn" type="button" value="8" onclick="appendToDisplay('8')">
+        <input class="p" type="button" value="*" onclick="appendToDisplay('*')"><br>
+        <input class="btn" type="button" value="9" onclick="appendToDisplay('9')">
+        <input class="e" type="button" value="=" onclick="calculate()">
+        <input class="ac" type="button" value="AC" onclick="clearDisplay()">
+        <input class="p" type="button" value="&#247;" onclick="appendToDisplay('/')"><br>
+    </form>
+</body>
+</html>
